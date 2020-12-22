@@ -12,8 +12,8 @@
 // tKey = process.env.VUE_APP_TMDB_KEY;
 
 //Keys needed to use OMDB and TMDB API's
-export const OMDB_KEY = process.env.VUE_APP_OMDB_KEY;
-export const TMDB_KEY = process.env.VUE_APP_TMDB_KEY;
+export const OMDB_KEY = getKeys('omdb');
+export const TMDB_KEY = getKeys('tmdb');
 //OMDB and TMDB url
 export const OMDB_URL = 'https://www.omdbapi.com/?';
 export const TMDB_URL = 'https://api.themoviedb.org/3/';
@@ -39,4 +39,13 @@ export const fadeIn = function(el) {
     el.classList.remove('fade-in');
     void el.offsetWidth;
     el.classList.add('fade-in');
+}
+
+async function getKeys(key) {
+    fetch(".netlify/functions/api")
+    .then(response => response.json())
+    .then(json => {
+        console.log('got keys');
+        return (key === 'omdb') ? json.omdb : json.tmdb;
+    })
 }
