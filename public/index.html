@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="keywords" content="series, shows, episodes, ratings, worst, lowest, rated">
+        <meta name="description" content="Find out what's the lowest-rated episode of a TV show, and compare it with other episodes" />
+        <meta name="author" content="Federico Laria" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>WorstEpisodes</title>
+
+        <!-- The favicon will change depending on the rating of the selected series/episode -->
+        <link rel="icon" href="../src/assets/img/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="../src/assets/img/favicon.ico" type="image/x-icon" />
+        <!-- Poppins font (from Google Fonts) -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600,700">
+        <!-- <link rel="stylesheet" href="../src/assets/css/main.css"> -->
+    </head>
+        
+    <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
