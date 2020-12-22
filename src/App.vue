@@ -467,11 +467,12 @@
                 let colArray = ['gr-green', 'gr-orange', 'gr-red', 'gr-orange'];
                 let col = (this.expandedEp) ? ratingColor(this.expandedEp.rating, colArray) : colArray[0];
                 //Update favicon color
-                if (col != this.lastColor) {
-                    let file = 'img/favicon-' + col.slice().split('-')[1] + '.ico'; 
-                    if (this.favLinks.icon) this.favLinks.icon.href = file;
-                    if (this.favLinks.shortcut) this.favLinks.shortcut.href = file;
-                }
+                // TODO:
+                // if (col != this.lastColor) {
+                //     let file = 'img/favicon-' + col.slice().split('-')[1] + '.ico'; 
+                //     if (this.favLinks.icon) this.favLinks.icon.href = file;
+                //     if (this.favLinks.shortcut) this.favLinks.shortcut.href = file;
+                // }
                 //Update lastColor and return
                 this.lastColor = col;
                 return col;
