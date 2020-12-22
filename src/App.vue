@@ -511,7 +511,7 @@
             } else if (this.onMobile) {
                 this.expandCard({ listIndex: 2, cardIndex: 0 });
             }
-            this.updateUrl();
+            // this.updateUrl();
         },
 
         methods: {
