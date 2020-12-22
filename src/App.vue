@@ -466,15 +466,6 @@
             gradientMove: function() {
                 let colArray = ['gr-green', 'gr-orange', 'gr-red', 'gr-orange'];
                 let col = (this.expandedEp) ? ratingColor(this.expandedEp.rating, colArray) : colArray[0];
-                //Update favicon color
-                // TODO:
-                // if (col != this.lastColor) {
-                //     let file = 'img/favicon-' + col.slice().split('-')[1] + '.ico'; 
-                //     if (this.favLinks.icon) this.favLinks.icon.href = file;
-                //     if (this.favLinks.shortcut) this.favLinks.shortcut.href = file;
-                // }
-                //Update lastColor and return
-                this.lastColor = col;
                 return col;
             },
 
@@ -700,6 +691,21 @@
                 this.onMobile = window.innerWidth <= 1080;
                 if (this.onMobile && !prev) this.listsHidden = true;
                 else if (!this.onMobile && prev) this.listsHidden = false;
+            }
+        },
+
+        watch: {
+            gradientMove: function() {
+                let colArray = ['gr-green', 'gr-orange', 'gr-red', 'gr-orange'];
+                let col = (this.expandedEp) ? ratingColor(this.expandedEp.rating, colArray) : colArray[0];
+                //Update favicon color
+                if (col != this.lastColor) {
+                    let file = 'img/favicon-' + col.slice().split('-')[1] + '.ico'; 
+                    if (this.favLinks.icon) this.favLinks.icon.href = file;
+                    if (this.favLinks.shortcut) this.favLinks.shortcut.href = file;
+                }
+                // Update lastColor
+                this.lastColor = col;
             }
         }
     }

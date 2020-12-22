@@ -7,6 +7,9 @@ fetch(".netlify/functions/api")
     tKey = json.tmdb;
 })
 
+// oKey = process.env.VUE_APP_OMDB_KEY;
+// tKey = process.env.VUE_APP_TMDB_KEY;
+
 //Keys needed to use OMDB and TMDB API's
 export const OMDB_KEY = oKey;
 export const TMDB_KEY = tKey;
